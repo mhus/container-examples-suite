@@ -18,7 +18,7 @@ jobs:
     if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
     runs-on: ubuntu-latest
     steps:
-      - using: 'docker'
+      - uses: 'docker'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
@@ -33,7 +33,7 @@ jobs:
     if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
     runs-on: macos-latest
     steps:
-      - using: 'docker'
+      - uses: 'docker'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
