@@ -1,0 +1,36 @@
+
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'containers/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-amd64:
+    if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: ./launcher/build.sh
+      - name: Deploy
+        run: ./launcher/deploy.sh
+  build-arm64:
+    if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: ./launcher/build.sh
+      - name: Deploy
+        run: ./launcher/deploy.sh
