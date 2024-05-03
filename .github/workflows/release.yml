@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-amd64:
+  build:
     if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
     runs-on: ubuntu-latest
     steps:
@@ -31,8 +31,3 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
         run: ./launcher/buildx.sh
-      - name: Deploy
-        run: ./launcher/deploy.sh
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
