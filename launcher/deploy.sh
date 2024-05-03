@@ -3,6 +3,12 @@
 cd "$(dirname "$0")"
 cd ../containers
 
+if [ ! -z "$DOCKER_USERNAME" ]; then
+  echo "Login to docker registry"
+  REGISTRY_URL="https://index.docker.io/v1/"
+  docker login "$REGISTRY_URL" -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+fi
+
 echo "===================================================="
 echo "Push dice container"
 echo "===================================================="
