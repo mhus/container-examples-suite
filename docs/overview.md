@@ -14,6 +14,8 @@ The containers are based on the latest `alpine` image and are written in `bash`.
 simple but useful. They are created for multiple architectures (linux/amd64 and linux/arm64) and are available 
 on [Docker Hub](https://hub.docker.com/u/mhus).
 
+All containers run with user id 1000. The containers are designed to run as non-root users.
+
 ## Releases and Snapshots
 
 The current snapshot is available as tag `latest` and the releases are tagged with the version number. Releases should

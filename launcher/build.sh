@@ -30,3 +30,10 @@ echo "===================================================="
 cd example-stress
 docker build -t mhus/example-stress:latest . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating web container"
+echo "===================================================="
+cd example-web
+docker build -t mhus/example-web:latest . || exit 1
+cd ..
