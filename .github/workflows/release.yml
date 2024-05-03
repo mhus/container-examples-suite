@@ -36,18 +36,3 @@ jobs:
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
-
-  build-arm64:
-    if: ${{ !startsWith(github.event.head_commit.message, 'wip:') }}
-    runs-on: macos-latest
-    steps:
-      - uses: 'docker'
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Build
-        run: ./launcher/build.sh
-      - name: Deploy
-        run: ./launcher/deploy.sh
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
