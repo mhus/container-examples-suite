@@ -29,3 +29,10 @@ echo "===================================================="
 cd example-bash
 docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-bash:$RELEASE_TAG --push . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating stress container"
+echo "===================================================="
+cd example-stress
+docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-stress:$RELEASE_TAG --push . || exit 1
+cd ..

@@ -9,7 +9,7 @@ This container is a simple example of a container that simulates rolling a dice.
 number. The use case for this container is to demonstrate how to run for infinite time or a specific number of times.
 Jobs can fail depending on the number of the result of the last roll.
 
-## Environment variables:
+## Environment variables
 
 - `SIDES`: The number of sides on the dice. (default: 6)
 - `ROLLS`: The number of times to roll the dice. (default: 1)

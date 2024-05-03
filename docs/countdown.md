@@ -9,7 +9,7 @@ This example demonstrates how to create a simple countdown timer using a contain
 the container will output a message and exit. The use case for this container is to demonstrate how to run a container 
 for a specific duration like jobs or cron jobs.
 
-## Environment variables:
+## Environment variables
 
 - `SLEEP`: The duration between each countdown update in seconds. (default: 1)
 - `START`: The initial value of the countdown. (default: 10)

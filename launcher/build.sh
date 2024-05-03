@@ -23,3 +23,10 @@ echo "===================================================="
 cd example-bash
 docker build -t mhus/example-bash:latest . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating stress container"
+echo "===================================================="
+cd example-stress
+docker build -t mhus/example-stress:latest . || exit 1
+cd ..

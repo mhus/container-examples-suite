@@ -38,8 +38,8 @@ docker run -it --rm --user root mhus/example-bash:latest --
 
 ```bash
 # Run infinite loop
-kubectl run dice --image=mhus/example-bash:latest --env="SLEEP=10" --restart=Never
+kubectl run bash --image=mhus/example-bash:latest --env="SLEEP=10" --restart=Never
 
 # Connect to the container with bash
-kubectl exec -it dice -- /bin/bash
+kubectl exec -it bash -- /bin/bash
 ```
