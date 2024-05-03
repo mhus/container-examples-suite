@@ -3,7 +3,11 @@
 cd "$(dirname "$0")"
 cd ../containers
 
-RELEASE_TAG=${RELEASE_TAG:-latest}
+RELEASE_TAG=latest
+
+if [ "$IS_RELEASE" = "true" ]; then
+  RELEASE_TAG=$(date '+%Y%m%d')
+fi
 
 echo "===================================================="
 echo "Creating dice container"

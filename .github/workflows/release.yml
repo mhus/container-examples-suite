@@ -8,6 +8,12 @@ on:
     paths:
       - 'containers/**'
   workflow_dispatch:
+    inputs:
+      isRelease:
+        description: 'Is Release'
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -38,3 +44,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
         run: ./launcher/buildx.sh
+        env:
+          IS_RELEASE: ${{ inputs.isRelease }}
