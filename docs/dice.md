@@ -21,6 +21,9 @@ Jobs can fail depending on the number of the result of the last roll.
 - 'FAIL_MESSAGE': The message to display when the job fails. Set to "-" to skip message. (default: "Failed!")
 - 'FAIL_EXIT_CODE': The exit code when the job fails. (default: 1)
 - `QUIET`: If set to `true`, the dice will not output the result of each roll. (default: false)
+- `LOG_JSON`: If set to `true`, the dice will output the result of each roll in JSON format. (default: false)
+- 'LOG_COLOR': If set to `true`, the dice will output the result of each roll in color. Ignored if `LOG_JSON` is set. (default: false)
+- `TERMINATE_SLEEP`: The duration to sleep before terminating the job. (default: 0)
 
 ## Running with docker
 

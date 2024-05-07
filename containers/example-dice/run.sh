@@ -10,11 +10,33 @@ FAIL_ON=${FAIL_ON:-0}
 FAIL_MESSAGE=${FAIL_MESSAGE:-"Failed!"}
 FAIL_EXIT_CODE=${FAIL_EXIT_CODE:-1}
 QUIET=${QUIET:-false}
+LOG_JSON=${LOG_JSON:-false}
+LOG_COLOR=${LOG_COLOR:-false}
+TERMINATE_SLEEP=${TERMINATE_SLEEP:-0}
+
+doExit() {
+  echo "Exiting..."
+  for i in $(seq ${TERMINATE_SLEEP} -1 1); do
+    echo "Exiting in ${i} seconds..."
+    sleep 1
+  done
+  exit 0
+}
+
+trap 'doExit' SIGTERM
 
 roll() {
   result=$((1 + RANDOM % ${SIDES}))
   if [ "${QUIET}" = "false" ]; then
-    echo ${result}
+    if [ "${LOG_JSON}" = "true" ]; then
+      echo "{ \"message\": \"${result}\", "severity": "info", "@timestamp": "$(date +%s)"}"
+    else
+      if [ "${LOG_COLOR}" = "true" ]; then
+        echo -e Result "\033[1;32m${result}\033[0m"
+      else
+        echo ${result}
+      fi
+    fi
   fi
   if [ ${result} -eq ${FAIL_ON} ]; then
     if [ "${FAIL_MESSAGE}" != "-" ]; then
