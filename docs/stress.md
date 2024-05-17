@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Stress Example Container
+title: Stress
 ---
 
 # Stress Example Container

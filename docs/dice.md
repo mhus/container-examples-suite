@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Dice Example Container
+title: Dice
 ---
 
 # Dice Example Container

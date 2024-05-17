@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title: Web Example Container
+title: Web
 ---
 
 # Web Example Container

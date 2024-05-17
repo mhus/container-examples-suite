@@ -43,3 +43,10 @@ echo "===================================================="
 cd example-web
 docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-web:$RELEASE_TAG --push . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating lorem container"
+echo "===================================================="
+cd example-lorem
+docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-lorem:$RELEASE_TAG --push . || exit 1
+cd ..

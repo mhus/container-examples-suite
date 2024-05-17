@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Countdown Example Container
+title: Countdown
 ---
 
 # Countdown Example Container
