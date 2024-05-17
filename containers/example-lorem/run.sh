@@ -27,7 +27,7 @@ lorem() {
       echo "{ \"message\": \"${result}\", "severity": "info", "@timestamp": "$(date +%s)"}"
     else
       if [ "${LOG_COLOR}" = "true" ]; then
-        echo -e Result "\033[1;32m${result}\033[0m"|sed 's/\\n/\n/g'
+        echo -e Result "\e[3$(( $RANDOM * 6 / 32767 + 1 ))m${result}\033[0m"|sed 's/\\n/\n/g'
       else
         echo ${result}|sed 's/\\n/\n/g'
       fi

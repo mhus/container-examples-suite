@@ -15,7 +15,7 @@ This is an example container that generates a lot of text using the Lorem Ipsum 
 - `SLEEP`: The duration between each roll in seconds. (default: 0.2)
 - `QUIET`: If set to `true`, the dice will not output the result of each roll. (default: false)
 - `LOG_JSON`: If set to `true`, the dice will output the result of each roll in JSON format. (default: false)
-- 'LOG_COLOR': If set to `true`, the dice will output the result of each roll in color. Ignored if `LOG_JSON` is set. (default: false)
+- `LOG_COLOR`: If set to `true`, the dice will output the result of each roll in color. Ignored if `LOG_JSON` is set. (default: false)
 - `TERMINATE_SLEEP`: The duration to sleep before terminating the job. (default: 0)
 
 For `lipsum.sh` see [lipsum-shell](https://github.com/alexchantastic/lipsum-shell) or following.

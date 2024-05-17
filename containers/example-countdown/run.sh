@@ -26,7 +26,7 @@ for i in $(seq ${START} -1 1); do
             echo "{ \"message\": \"${i}\", "severity": "info", "@timestamp": "$(date +%s)"}"
         else
             if [ "${LOG_COLOR}" = "true" ]; then
-                echo -e Countdown "\033[1;32m${i}\033[0m"
+                echo -e Countdown "\e[3$(( $RANDOM * 6 / 32767 + 1 ))m${i}\033[0m"
             else
                 echo $i
             fi
