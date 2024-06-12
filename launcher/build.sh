@@ -44,3 +44,10 @@ echo "===================================================="
 cd example-lorem
 docker build -t mhus/example-lorem:latest . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating events container"
+echo "===================================================="
+cd example-events
+docker build -t mhus/example-events:latest . || exit 1
+cd ..

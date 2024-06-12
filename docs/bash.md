@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Bash Example Container
+title: Bash
 ---
 
 # Bash Example Container
@@ -19,7 +19,8 @@ It's possible to overwrite the command and run other commands. For example, to r
 
 ## Installed packages:
 
-`bash coreutils procps util-linux findutils curl wget jq ngrep vim nano tcpdump bind-tools iproute2 iputils`
+- `bash coreutils procps util-linux findutils curl wget jq ngrep vim nano tcpdump bind-tools iproute2 iputils`
+- `kubectl`
 
 ## Running with docker
 

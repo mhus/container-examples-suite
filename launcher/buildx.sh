@@ -50,3 +50,10 @@ echo "===================================================="
 cd example-lorem
 docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-lorem:$RELEASE_TAG --push . || exit 1
 cd ..
+
+echo "===================================================="
+echo "Creating events container"
+echo "===================================================="
+cd example-events
+docker buildx build --platform linux/amd64,linux/arm64 -t mhus/example-events:$RELEASE_TAG --push . || exit 1
+cd ..
