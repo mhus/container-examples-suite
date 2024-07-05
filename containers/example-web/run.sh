@@ -14,6 +14,6 @@ if ([ "$RANDOM_COLOR" = "true" ]); then
 fi
 echo "COLOR: $COLOR"
 echo "MESSAGE: $MESSAGE"
-echo "<html><body bgcolor=\"$COLOR\" text=\"$COLOR_TEXT\"><center><h1>$MESSAGE</h1>Started $(date '+%Y:%m:%d %H:%M:%S')</center></body></html>" > /usr/share/nginx/html/index.html
+echo "<html><body bgcolor=\"$COLOR\" text=\"$COLOR_TEXT\"><center><h1>$MESSAGE</h1><p>Started: $(date '+%Y:%m:%d %H:%M:%S')</p><p>Hostname: $HOSTNAME</p></center></body></html>" > /usr/share/nginx/html/index.html
 
 nginx -g "daemon off;"
