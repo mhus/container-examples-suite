@@ -2,12 +2,17 @@
 
 LIPSUM=${LIPSUM:-"paragraphs 10 -m 4 -M 6 -w 8 -W 10"}
 REPEAT=${REPEAT:-1}
+REPEAT_RANDOM=${REPEAT_RANDOM:-0}
 SLEEP=${SLEEP:-0.2}
 INFINITE=${INFINITE:-false}
 QUIET=${QUIET:-false}
 LOG_JSON=${LOG_JSON:-false}
 LOG_COLOR=${LOG_COLOR:-false}
 TERMINATE_SLEEP=${TERMINATE_SLEEP:-0}
+EXIT_CODE=${EXIT_CODE:-0}
+
+R=$(( $RANDOM * $REPEAT_RANDOM / 32767 ))
+let REPEAT=REPEAT+R
 
 doExit() {
   echo "Exiting..."
@@ -48,3 +53,5 @@ else
     fi
   done
 fi
+
+exit ${EXIT_CODE}

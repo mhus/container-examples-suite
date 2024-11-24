@@ -17,6 +17,8 @@ This is an example container that generates a lot of text using the Lorem Ipsum 
 - `LOG_JSON`: If set to `true`, the dice will output the result of each roll in JSON format. (default: false)
 - `LOG_COLOR`: If set to `true`, the dice will output the result of each roll in color. Ignored if `LOG_JSON` is set. (default: false)
 - `TERMINATE_SLEEP`: The duration to sleep before terminating the job. (default: 0)
+- `REPEAT_RANDOM`: A random number of times to repeat the lorem output. (default: 0)
+- `EXIT_CODE`: Set the return code on exit. (default 0)
 
 For `lipsum.sh` see [lipsum-shell](https://github.com/alexchantastic/lipsum-shell) or following.
 
