@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 RUN apk add --no-cache bash
+RUN rm /usr/bin/wget /bin/su /sbin/apk
 
 RUN adduser -D -u 1000 user
 
